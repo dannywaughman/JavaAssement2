@@ -37,24 +37,26 @@ public class Runner extends PlayerPosition {
 		String direction;
 		direction = playerDirection.nextLine().toString();
 
-		if (playerDirection.nextLine().toString().equals("North")) {
-			moveNorth();
-			System.out.println("Distance to exit: " + distance + "m");
-		} else if (playerDirection.nextLine().toString().equals("South")) {
-			moveSouth();
-			System.out.println("Distance to exit: " + distance + "m");
-		} else if (playerDirection.nextLine().toString().equals("East")) {
-			moveEast();
-			System.out.println("Distance to exit: " + distance + "m");
-		} else if (playerDirection.nextLine().toString().equals("West")) {
-			moveWest();
-			System.out.println("Distance to exit: " + distance + "m");
-		} else {
-			System.out.println("Please enter North, East, South or West: ");
+		while (game = true) {
+
+			if (direction.equals("North")) {
+				moveNorth();
+				System.out.println("Distance to exit: " + distance + "m");
+				break;
+			} else if (direction.equals("South")) {
+				moveSouth();
+				System.out.println("Distance to exit: " + distance + "m");
+				break;
+			} else if (direction.equals("East")) {
+				moveEast();
+				System.out.println("Distance to exit: " + distance + "m");
+			} else if (direction.equals("West")) {
+				moveWest();
+				System.out.println("Distance to exit: " + distance + "m");
+				break;
+			} else {
+				System.out.println("Please enter North, East, South or West: ");
+			} continue;
 		}
-//		System.out.println("Y: " + y1);
-//		System.out.println("X: " + x1);
-//		System.out.println("Distance to exit: " + distance + "m"); // if statements not correct?
-																	// input North etc keeps user input open
 	}
 }
