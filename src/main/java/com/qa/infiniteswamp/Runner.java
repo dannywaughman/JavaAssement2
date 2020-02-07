@@ -37,16 +37,16 @@ public class Runner extends PlayerPosition {
 		String direction;
 		direction = playerDirection.nextLine().toString();
 
-		if (playerDirection.nextLine().toString() == "North") {
+		if (playerDirection.nextLine().toString().equals("North")) {
 			moveNorth();
 			System.out.println("Distance to exit: " + distance + "m");
-		} else if (playerDirection.nextLine().toString() == "South") {
+		} else if (playerDirection.nextLine().toString().equals("South")) {
 			moveSouth();
 			System.out.println("Distance to exit: " + distance + "m");
-		} else if (playerDirection.nextLine().toString() == "East") {
+		} else if (playerDirection.nextLine().toString().equals("East")) {
 			moveEast();
 			System.out.println("Distance to exit: " + distance + "m");
-		} else if (playerDirection.nextLine().toString() == "West") {
+		} else if (playerDirection.nextLine().toString().equals("West")) {
 			moveWest();
 			System.out.println("Distance to exit: " + distance + "m");
 		} else {
