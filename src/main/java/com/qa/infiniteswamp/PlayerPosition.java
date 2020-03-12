@@ -5,7 +5,7 @@ public class PlayerPosition {
 	static float x1 = Math.round((10 * Math.random())); // starting position x coordinate (rounded)
 	static float y1 = Math.round((10 * Math.random())); // starting position y coordinate (rounded)
 	static float distance;
-	static boolean game = false; 
+	static boolean game = true; 
 
 	// MOVING METHODS
 	public static void moveNorth() {
@@ -15,10 +15,7 @@ public class PlayerPosition {
 				(ExitPosition.getExitX() - PlayerPosition.getX1()) * (ExitPosition.getExitX() - PlayerPosition.getX1())
 						+ (ExitPosition.getExitY() - PlayerPosition.getY1())
 								* (ExitPosition.getExitY() - PlayerPosition.getY1())));
-		if (distance == 0) {
-			game = true;
-		}
-		
+
 
 	}
 
@@ -29,9 +26,6 @@ public class PlayerPosition {
 				(ExitPosition.getExitX() - PlayerPosition.getX1()) * (ExitPosition.getExitX() - PlayerPosition.getX1())
 						+ (ExitPosition.getExitY() - PlayerPosition.getY1())
 								* (ExitPosition.getExitY() - PlayerPosition.getY1())));
-		if (distance == 0) {
-			game = true;
-		}
 
 	}
 
@@ -42,9 +36,7 @@ public class PlayerPosition {
 				(ExitPosition.getExitX() - PlayerPosition.getX1()) * (ExitPosition.getExitX() - PlayerPosition.getX1())
 						+ (ExitPosition.getExitY() - PlayerPosition.getY1())
 								* (ExitPosition.getExitY() - PlayerPosition.getY1())));
-		if (distance == 0) {
-			game = true;
-		}
+		
 
 	}
 
@@ -55,9 +47,6 @@ public class PlayerPosition {
 				(ExitPosition.getExitX() - PlayerPosition.getX1()) * (ExitPosition.getExitX() - PlayerPosition.getX1())
 						+ (ExitPosition.getExitY() - PlayerPosition.getY1())
 								* (ExitPosition.getExitY() - PlayerPosition.getY1())));
-		if (distance == 0) {
-			game = true;
-		}
 
 	}
 
