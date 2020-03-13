@@ -20,8 +20,7 @@ public class Runner extends PlayerPosition {
 
 		System.out.println("Hello. What is your name?");
 
-		String name;
-		name = playerName.nextLine();
+		String name = playerName.nextLine();
 
 		System.out.println("Hello " + name + ". It seems you are trapped in an infinite swamp.");
 		System.out.println("There is one exit, but the grey foggy clouds have blinded you.");
@@ -34,29 +33,55 @@ public class Runner extends PlayerPosition {
 		System.out.println("Lets figure out where the exit is!");
 		System.out.println("Would you like to move North, East, South or West?");
 
-		String direction;
-		direction = playerDirection.nextLine().toString();
-
-		while (game = true) {
-
-			if (direction.equals("North")) {
+		while (game) {
+			
+			String direction;
+			direction = playerDirection.nextLine().toString().toLowerCase();
+			
+			switch (direction) {
+			case "north": 
 				moveNorth();
-				System.out.println("Distance to exit: " + distance + "m");
 				break;
-			} else if (direction.equals("South")) {
+			case "south":
 				moveSouth();
-				System.out.println("Distance to exit: " + distance + "m");
 				break;
-			} else if (direction.equals("East")) {
+			case "east": 
 				moveEast();
-				System.out.println("Distance to exit: " + distance + "m");
-			} else if (direction.equals("West")) {
-				moveWest();
-				System.out.println("Distance to exit: " + distance + "m");
 				break;
-			} else {
-				System.out.println("Please enter North, East, South or West: ");
-			} continue;
+			case "west":
+				moveWest();
+				break;
+			}
+			
+			if (distance == 0) {
+				System.out.println("You have escaped! Congratulations " + name + "!");
+				game = false;
+				break;
+			} else if (distance <= 1) {
+				System.out.println("Very close!");
+			}
+			System.out.println("The exit is " + distance + "m away");
+			System.out.println("Y-Coordinate: " + y1);
+			System.out.println("X-Coordinate: " + x1);
+
+//			if (direction.equals("North")) {
+//				moveNorth();
+//				System.out.println("Distance to exit: " + distance + "m");
+//				break;
+//			} else if (direction.equals("South")) {
+//				moveSouth();
+//				System.out.println("Distance to exit: " + distance + "m");
+//				break;
+//			} else if (direction.equals("East")) {
+//				moveEast();
+//				System.out.println("Distance to exit: " + distance + "m");
+//			} else if (direction.equals("West")) {
+//				moveWest();
+//				System.out.println("Distance to exit: " + distance + "m");
+//				break;
+//			} else {
+//				System.out.println("Please enter North, East, South or West: ");
+//			} 
 		}
 	}
 }
